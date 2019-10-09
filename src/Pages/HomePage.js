@@ -24,9 +24,7 @@ const Profile = styled.div`
     height: 70%
   }
 `
-const UserContainer = styled.div`
- 
-`
+
 
 
 
@@ -65,7 +63,7 @@ class HomePage extends React.Component {
         {
           users.map((user, index) => {
             return (
-              <UserContainer>
+              
                 <div key={index} className='row user_container'> 
                   <div className='col-12 col-sm-3 col-md-3 col-lg-3  d-flex flex-column p-3' key={user.id}>
                     <Profile>
@@ -77,7 +75,7 @@ class HomePage extends React.Component {
                     <ContainerImage id={user.id} />
                   </div>
                 </div>
-              </UserContainer>
+              
 
             )
           })

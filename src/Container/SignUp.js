@@ -227,7 +227,7 @@ class SignUp extends React.Component {
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" name ='email' value = {this.state.email} onChange = {this.handleInput} />
-                        <Form.Control.Feedback style = {{color: 'red'}} type = 'isinvalid'>dont choose it</Form.Control.Feedback>
+                        <Form.Control.Feedback style = {{color: 'red'}} type = 'isinvalid'></Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">

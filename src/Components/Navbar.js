@@ -18,7 +18,7 @@ const Navigation = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         {/* <Link to = '/' className = "nav-link active">Home</Link> */}
-                        <Link to='/users/1' className="nav-link active nav_bar_section">User profile</Link>
+                        {/* <Link to='/users/1' className="nav-link active nav_bar_section">User Profile</Link> */}
                         <Link to='/profile' className="nav-link active nav_bar_section">My Profile Page</Link>
                     </Nav>
                     <Nav>
