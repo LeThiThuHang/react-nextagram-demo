@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import Loading from '../Components/Loading'
 import UploadPage from './UploadPage';
 
 import { Redirect } from 'react-router'
@@ -75,7 +74,7 @@ class MyProfilePage extends React.Component {
                 <>  
                 <div>
                     <p>{profile.username}</p>
-                    <img src = {profile.profile_picture}></img>
+                    <img src = {profile.profile_picture} alt='users upload pictures'></img>
 
                 </div>       
                                
@@ -85,7 +84,7 @@ class MyProfilePage extends React.Component {
 
                     {
                         images.map((each, index) => 
-                        <img key={index} src={each}/>
+                        <img key={index} src={each} alt='users upload pictures'/>
                         )
                     }
                 

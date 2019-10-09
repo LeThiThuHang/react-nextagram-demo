@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonToolbar, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
@@ -80,7 +80,7 @@ class LogIn extends React.Component {
       <>
         <Modal show={this.props.show}>
 
-          <div style={{ 'width': '90%', 'margin-left': '1rem' }} onClick={this.clearForm}>
+          <div style={{ 'width': '90%', 'marginLeft': '1rem' }} onClick={this.clearForm}>
             <Modal.Header closeButton onClick={this.props.closeForm} >
               <Modal.Title>
                 <h1>Login</h1>
@@ -98,7 +98,7 @@ class LogIn extends React.Component {
           </div>
 
           {/*inside here we need to put the form*/}
-          <Form style={{ 'width': '90%', 'margin-left': '1rem', 'margin-bottom': '1rem' }} onSubmit={this.handleSubmit}>
+          <Form style={{ 'width': '90%', 'marginLeft': '1rem', 'marginBottom': '1rem' }} onSubmit={this.handleSubmit}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>User Name</Form.Label>
               <Form.Control type="email" placeholder="Enter user name" value={this.state.username} onChange={this.handleInput} name='username' />

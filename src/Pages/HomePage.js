@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 //import styled components
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import ContainerImage from '../Container/ContainerImage.js';
 
@@ -68,7 +68,7 @@ class HomePage extends React.Component {
                   <div className='col-12 col-sm-3 col-md-3 col-lg-3  d-flex flex-column p-3' key={user.id}>
                     <Profile>
                       <NavLink  /* className='p-2 text-center' */ to={`/users/${user.id}`}><p>{user.username}</p></NavLink>
-                      <img style={{ 'width': '100%' }} className='rounded-circle' src={user.profileImage} />
+                      <img style={{ 'width': '100%' }} className='rounded-circle' src={user.profileImage} alt='profile' />
                     </Profile>
                   </div>
                   <div className='col-12 col-sm-9 col-md-9 col-lg-9 p-2 d-flex flex-wrap justify-content-start'>

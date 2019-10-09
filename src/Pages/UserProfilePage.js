@@ -97,7 +97,7 @@ class UserProfilePage extends React.Component {
                     {
                     imageLinks.map((imageLink)=>{
                         return <EachImage src = {imageLink}></EachImage>
-                        {/* <img width = '100vw' src = {imageLink}></img> */}
+                        
                     })
                     }                        
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginModal from './LoginModal';
-import styled from 'styled-components';
 import { Navbar, Nav } from 'react-bootstrap';
 import './Navbar.css'
 
@@ -12,7 +11,7 @@ const Navigation = (props) => {
      
             <Navbar sticky="top" /* bg="light" */ expand="lg" className="nav_bar_section">
                 <Navbar.Brand href="/">
-                    <img src="https://img.icons8.com/bubbles/50/000000/instagram-new.png" />
+                    <img src="https://img.icons8.com/bubbles/50/000000/instagram-new.png" alt='logo' />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
