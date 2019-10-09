@@ -17,7 +17,7 @@ class LoadingImages extends React.Component {
 // this is Stateless Function Component
 const LoadingImages = (props) => {
     return (
-        <div>             
+        <div className='text-center'>             
             <img src= {logo} alt = 'Loading'></img>                                                
         </div>
     )

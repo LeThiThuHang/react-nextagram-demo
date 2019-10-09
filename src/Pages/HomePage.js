@@ -7,9 +7,9 @@ import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 
 import ContainerImage from '../Container/ContainerImage.js';
-import Loading from '../Components/Loading.js'
 
 import './Pages.css'
+import LoadingImages from '../Components/LoadingImages.js';
 
 const Profile = styled.div`
 
@@ -57,7 +57,7 @@ class HomePage extends React.Component {
     const isLoading = this.state.isLoading */
 
     if (isLoading) {
-      return <Loading />
+      return <LoadingImages />
     }
 
     return (

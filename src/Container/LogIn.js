@@ -80,7 +80,7 @@ class LogIn extends React.Component {
             <> 
               <Modal show={this.props.show}>
 
-                <div onClick = {this.clearForm}>
+                <div style={{'width':'90%', 'margin-left':'1rem'}} onClick = {this.clearForm}>
                 <Modal.Header closeButton onClick ={this.props.closeForm} >                 
                   <Modal.Title>
                     <h1>Login</h1>
@@ -97,16 +97,8 @@ class LogIn extends React.Component {
                 </Modal.Header>
                 </div>
 
-                <Modal.Body>
-                    {/*inside here we need to put the button*/}
-                    <ButtonToolbar>
-                        <Button href="#">Sign In with Google</Button>
-                    </ButtonToolbar>
-                  {/*inside here we need to put the button*/}
-                    
-                </Modal.Body>
                 {/*inside here we need to put the form*/}
-                    <Form onSubmit = {this.handleSubmit}>
+                    <Form style={{'width':'90%', 'margin-left':'1rem', 'margin-bottom':'1rem'}}  onSubmit = {this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User Name</Form.Label>
                         <Form.Control type="email" placeholder="Enter user name" value = {this.state.username} onChange ={this.handleInput} name = 'username' />
