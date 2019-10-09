@@ -1,0 +1,13 @@
+.body_page {
+    background-color: #8bbabb;
+}
+.user_container {
+    background-color: #c7f0db;
+    border-radius: 20px;
+    /* border: 1px solid #5edfff; */
+    margin-bottom:1rem;
+    width:94vw;
+    margin-left: 1rem;
+
+    {/* border border-light mb-1 bg-dark */}
+}

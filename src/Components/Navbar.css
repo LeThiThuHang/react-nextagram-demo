@@ -1,5 +1,7 @@
 .nav_bar_section {
-    color: blue;
+    background-color: #8bbabb;
     font-size: 20px;
     font-family: 'Underdog', cursive;
+    /* margin-bottom:1rem; */
+    
 }
