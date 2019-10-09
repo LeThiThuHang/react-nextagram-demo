@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import Loading from '../Components/Loading'
 import UploadPage from './UploadPage';
 
+import { Redirect } from 'react-router'
+
 class MyProfilePage extends React.Component {
     state = {
         isLoading: true,
@@ -14,6 +16,13 @@ class MyProfilePage extends React.Component {
     }
 
     componentDidMount () {
+        //only call if log in 
+        if (localStorage.getItem('JWT')) {
+            this.APIcall();
+        }
+    }
+
+    APIcall = () => {
         //get the profile name and ID and pass to the profile in state
         axios({
             url: 'https://insta.nextacademy.com/api/v1/users/me', 
@@ -47,6 +56,7 @@ class MyProfilePage extends React.Component {
             .catch(error => {
                 toast('You have an error loading the images from yourself')
             })
+
     }
 
 
@@ -55,24 +65,38 @@ class MyProfilePage extends React.Component {
 
         const {profile, images} = this.state
 
-        if(this.state.isLoading) {
+/*         if(this.state.isLoading) {
             return <Loading />
-        }
+        } */
 
-        return (  
-            <>  
+        return (
+            localStorage.getItem('JWT')  
+            ? (
+                <>  
                 <div>
                     <p>{profile.username}</p>
                     <img src = {profile.profile_picture}></img>
 
                 </div>       
-                <UploadPage />
-                {
-                    images.map((each, index) => 
-                    <img key={index} src={each}/>
-                    )
-                }
-            </>
+                               
+                <UploadPage APIcall = {this.APIcall}/> {/* passing the API call down to ImageUpload Upload button so it will reload all images */}
+
+                <div display = 'flex'>
+
+                    {
+                        images.map((each, index) => 
+                        <img key={index} src={each}/>
+                        )
+                    }
+                
+                
+                </div> 
+
+
+
+                </>
+            )
+            : <Redirect to = '/' />
         )
     }
 }

@@ -15,7 +15,9 @@ const Navigation = (props) => {
 
         //this is new nav
         <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Nextagram</Navbar.Brand>
+        <Navbar.Brand href="#home">
+            <img src="https://img.icons8.com/bubbles/50/000000/instagram-new.png"/>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
 

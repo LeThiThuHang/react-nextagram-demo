@@ -14,7 +14,6 @@ import UserProfilePage from './Pages/UserProfilePage.js'
 import MyProfilePage from './Pages/MyProfilePage'
 //import Navbar
 import Navigation from './Components/Navbar.js'
-import UploadPage from './Pages/UploadPage.js';
 
 
 
@@ -24,12 +23,31 @@ class App extends React.Component {
     JWT: ''
   }
 
+  componentDidMount () {
+    this.keepLogIn()
+  }
+
   //passing this funtion to Login to receive the state of true/ false for isLogin state, logInInfor is the response.data from Login component
-  isLogin = (logInInfor) => {   
-    this.setState({
-      isLogin: logInInfor.status === 'success' ? true : false,
-      JWT: logInInfor.auth_token
-    })   
+
+  keepLogIn = () => {
+    if ( isNaN (localStorage.getItem('JWT')) ) {
+      this.setState({
+        isLogin: true
+      })    
+  }
+  }
+
+  isLogin = (logInInfor) => {
+    if ( isNaN (localStorage.getItem('JWT')) ) {
+      this.setState({
+        isLogin: true
+      })
+    } else {
+      this.setState({
+        isLogin: logInInfor.status === 'success' ? true : false,
+        JWT: logInInfor.auth_token
+      }) 
+  }
   }
 
 

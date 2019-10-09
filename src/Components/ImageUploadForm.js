@@ -72,6 +72,7 @@ class ImageUploadForm extends React.Component {
                 <Button type = 'submit' color = 'primary' /* disable = {!this.state.imageFile} */ 
                         onClick = { (event) => {                       
                             this.handleSubmit(event);
+                            this.props.APIcall(); // calling the API to reaload all image after submit
                         } }
                 >
                     Upload

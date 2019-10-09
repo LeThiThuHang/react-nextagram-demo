@@ -22,6 +22,7 @@ class LoginModal extends React.Component {
         showLogOutModal: false
     }
 
+
     // this is to control the buttons Sign In and Log In 
 
     showModal = () => {
@@ -52,16 +53,6 @@ class LoginModal extends React.Component {
         })
     }
 
-    //this is to receive the state of isLogin from the children Login, so we can display the LogOut button 
-/*     userLogin = (status) => {
-        
-        this.setState({
-            isLogin: status
-        })
-        
-
-    } */
-
     //show Logout modal when click on the button Log out
     showLogOutModal = () => {
         this.setState({
@@ -70,17 +61,16 @@ class LoginModal extends React.Component {
         
     }
 
-    //after submitting the Logout button, set state as in beginning
+    //after submitting the Logout button, set state as in beginning only if the JWT is empty
     // with log out, should remove item. So basically, we only need to remove item when the users click on log out
     closeLogOut = () => {
-        this.setState({
-            showModal: false,
-            isLoginForm: false,    
-            showLogOutModal: false
-        })
-        localStorage.removeItem('JWT')
-        
-    }
+            this.setState({
+                showModal: false,
+                isLoginForm: false,    
+                showLogOutModal: false
+            })
+            localStorage.removeItem('JWT')
+        }
 
 
     render() {      

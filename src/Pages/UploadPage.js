@@ -27,7 +27,8 @@ class UploadPage extends React.Component {
             <PreviewImage imageFile = {this.state.imageFile}/>
 
             {/* ImageUploadForm will pass the state to parent */}
-            <ImageUploadForm imageUpload = {this.imageUpload} imageFile = {this.state.imageFile} />
+            {/* Passing APIcall down to ImageUploadForm when submit the button to reload all images */}
+            <ImageUploadForm imageUpload = {this.imageUpload} imageFile = {this.state.imageFile} APIcall = {this.props.APIcall} />
 
 
             </>
