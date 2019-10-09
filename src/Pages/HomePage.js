@@ -34,8 +34,9 @@ class HomePage extends React.Component {
       }
     
       render() {
-        const users = this.state.users 
-        const isLoading = this.state.isLoading
+        const {users, isLoading} = this.state
+        /* const users = this.state.users 
+        const isLoading = this.state.isLoading */
     
         if(isLoading) {
           return <Loading />
