@@ -9,7 +9,10 @@ import SignUp from '../Container/SignUp';
 import LogOut from '../Container/LogOut';
 
 const ButtonX = styled(Button) ` 
-    margin-left: 12px
+    margin-left: 12px;
+    background-color: #464159;
+    border: 1px solid #464159;
+    
 `
 
 
