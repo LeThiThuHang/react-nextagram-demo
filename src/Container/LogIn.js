@@ -41,22 +41,23 @@ class LogIn extends React.Component {
       .then(response => {
         console.log(response.data.status)
         if (response.data.status === 'success') {
-
-          localStorage.setItem('JWT', response.data.auth_token)
+          localStorage.setItem('JWT', response.data.auth_token);
           this.setState({
             notifyLogin: true,
-
-          })
-          this.props.isLogin(response.data)
-          toast('You have log in succesfully')
+          });
+          this.props.isLogin(response.data);
+          toast.success('You have log in succesfully!!!', {
+            position: toast.POSITION.TOP_CENTER
+          });
         }
-
       })
       .catch(() => {
         this.setState({
           notifyLogin: false
         })
-        toast('You have errors')
+        toast.error('You have errors', {
+          position: toast.POSITION.TOP_CENTER
+        });
       })
   }
 
