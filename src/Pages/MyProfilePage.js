@@ -8,28 +8,37 @@ import { Redirect } from 'react-router'
 import LoadingImages from '../Components/LoadingImages';
 import styled from 'styled-components';
 
+const MyProfilePageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 const Userprofile = styled.div`
     display: flex;
     flex-direction: row;
+    width:100vw;
     height: 20vh;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: center;
     background-color: #c7f0db;
 `
 
-const Image = styled.img`
+const MyImage = styled.img`
     margin: 2rem;
+    height: 15vh;
     border-radius: 50%;
 `
 
 const Paragraph = styled.p`
-    font-size: 3rem;
+    font-size: 5rem;
     font-family: 'Underdog', cursive;
 `
 
 const ImageContainer = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 `
 
 const ImageOfUser = styled.img`
@@ -113,14 +122,15 @@ class MyProfilePage extends React.Component {
         return (
             localStorage.getItem('JWT')
                 ? (
-                    <>
+                    
+                    <MyProfilePageContainer>
+
                         <Userprofile>
-                            <Image src={profile.profile_picture} alt='users upload pictures'></Image>
+                            <MyImage src={profile.profile_picture} alt='users upload pictures'></MyImage>
                             <Paragraph>{profile.username}</Paragraph>
                         </Userprofile>
 
                         <UploadPage APIcall={this.APIcall} /> {/* passing the API call down to ImageUpload Upload button so it will reload all images */}
-
                         
                         <ImageContainer>
                             {
@@ -129,8 +139,8 @@ class MyProfilePage extends React.Component {
                                 )
                             }
                         </ImageContainer>
+                    </MyProfilePageContainer>
                         
-                    </>
                 )
                 : (
                     <InformUser>Please log in to see your profile and upload photos</InformUser>

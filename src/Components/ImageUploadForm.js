@@ -68,9 +68,9 @@ class ImageUploadForm extends React.Component {
                         onChange = {this.handleFile}
                     />                 
 
-                    <FormText color = 'muted'>
+                    {/* <FormText color = 'muted'>
                         Make sure the image being uploaded is supported format
-                    </FormText>
+                    </FormText> */}
 
                 </FormGroup>
 
