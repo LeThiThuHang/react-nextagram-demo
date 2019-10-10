@@ -55,7 +55,6 @@ class App extends React.Component {
   logOut = () => {
     this.setState({
       isLogin: false
-
     })
   }
 

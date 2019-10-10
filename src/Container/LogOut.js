@@ -12,7 +12,7 @@ class LogOut extends React.Component {
             </Modal.Header>
 
             <Modal.Body>
-                <p>Please log out here</p>
+                <p>Are you sure you want to log out ? Click log out to continue</p>
             </Modal.Body>
 
             <Modal.Footer>

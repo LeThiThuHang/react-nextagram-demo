@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import LogIn from '../Container/LogIn';
 import SignUp from '../Container/SignUp';
 import LogOut from '../Container/LogOut';
+import { toast } from 'react-toastify';
 
 const ButtonX = styled(Button) ` 
     margin-left: 12px;
@@ -67,12 +68,22 @@ class LoginModal extends React.Component {
     //after submitting the Logout button, set state as in beginning only if the JWT is empty
     // with log out, should remove item. So basically, we only need to remove item when the users click on log out
     closeLogOut = () => {
+        console.log('run close log out')
             this.setState({
                 showModal: false,
                 isLoginForm: false,    
                 showLogOutModal: false
             })
-            localStorage.removeItem('JWT')
+            localStorage.removeItem('JWT');
+
+            console.log(localStorage.getItem('JWT'))
+            console.log(localStorage.getItem('JWT') === null)
+
+            if (localStorage.getItem('JWT') === null) {
+                toast.success('You have log out succesfully!', {
+                    position: toast.POSITION.TOP_CENTER
+                });
+            }
         }
 
 
