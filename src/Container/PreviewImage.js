@@ -1,5 +1,28 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import styled from 'styled-components';
+import myImage from './Images/default_image.jpg'
+
+
+const PreviewImageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: flex-start;
+    align-items: center;
+`
+const Image = styled.img`
+    margin: 2rem;
+    height: 50vh;
+    width: 40vw;
+    border-radius: 5%;
+    border: 1px solid black;
+`
+
+const Text = styled.p`
+    font-size: 3rem;
+    font-family: 'Underdog', cursive;
+`
 
 class PreviewImage extends React.Component {
     state = {
@@ -17,24 +40,17 @@ class PreviewImage extends React.Component {
                     {
                         PreviewImage 
                         ? (  
-                            <>                     
-                            <Card.Img variant="top" src = {PreviewImage} />
-                            <Card.Body>
-                                <Card.Text>
-                                    Preview Image
-                                </Card.Text>
-                            </Card.Body>
-                            </>
-                            
+                            <PreviewImageContainer>
+                                <Text>Upload images</Text>
+                                <Image src = {PreviewImage} ></Image>
+                            </PreviewImageContainer>                           
                         )
                         : (   
-                            <>                      
-                            <Card.Body>
-                                <Card.Text>
-                                    Preview Image
-                                </Card.Text>
-                            </Card.Body>
-                            </>
+                            <PreviewImageContainer>
+                                <Text>Upload images</Text>
+                                <Image src = {myImage}></Image>
+                            </PreviewImageContainer> 
+                            
                         )
                     }
 

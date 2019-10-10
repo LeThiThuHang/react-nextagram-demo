@@ -30,8 +30,10 @@ class ImageUploadForm extends React.Component {
         .then(response => {
             console.log(response.data)
             if(response.data.success) {
-                toast('You have upload your photo successfully')
-                console.log('success')
+                toast.success('You have upload your photo successfully',{
+                    position: toast.POSITION.TOP_CENTER
+                });
+                
                 this.props.imageUpload('')
                 this.setState({
                     text: ''
@@ -39,10 +41,13 @@ class ImageUploadForm extends React.Component {
             }
         })
         .catch(error => {
-            toast('Your photo is not uploaded succesfully')
+            toast.error('Your photo is not uploaded succesfully', {
+                position: toast.POSITION.TOP_CENTER
+            });
+
             this.props.imageUpload('')
             this.setState({
-                text: ''
+                text: error.response.data
             })
         })            
         }
@@ -52,7 +57,7 @@ class ImageUploadForm extends React.Component {
         console.log('running image upload file')
         
         return (
-            <Form>
+            <Form style = {{'margin':'2rem','font-size': '2rem', 'font-family': 'Underdog, cursive'}}>
                 <FormGroup>
 
                     <Form.Control
@@ -69,7 +74,7 @@ class ImageUploadForm extends React.Component {
 
                 </FormGroup>
 
-                <Button type = 'submit' color = 'primary' /* disable = {!this.state.imageFile} */ 
+                <Button style = {{'margin':'2rem','font-size': '2rem', 'font-family': 'Underdog, cursive', 'background-color': '#63707e'}} type = 'submit' /* color = 'primary' */ /* disable = {!this.state.imageFile} */ 
                         onClick = { (event) => {                       
                             this.handleSubmit(event);
                             this.props.APIcall(); // calling the API to reaload all image after submit
