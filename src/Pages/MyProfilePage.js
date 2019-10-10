@@ -38,11 +38,18 @@ const ImageOfUser = styled.img`
     width: 30vw;
     border-radius: 5%;
 `
+const InformUser = styled.div`
+    font-size: 3rem;
+    font-family: 'Underdog', cursive;
+    margin: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+`
 
 
 class MyProfilePage extends React.Component {
     state = {
-        isLoading: true,
+        isLoading: false,
         images: [],
         profile: {}
 
@@ -96,9 +103,10 @@ class MyProfilePage extends React.Component {
 
     render() {
 
-        const { profile, images } = this.state
+        const { profile, images, isLoading } = this.state;
+        console.log(isLoading)
 
-        if (this.state.isLoading) {
+        if (isLoading) {
             return <LoadingImages />
         }
 
@@ -124,7 +132,10 @@ class MyProfilePage extends React.Component {
                         
                     </>
                 )
-                : <Redirect to='/' />
+                : (
+                    <InformUser>Please log in to see your profile and upload photos</InformUser>
+                )
+                 
         )
     }
 }
